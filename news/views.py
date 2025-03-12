@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from rest_framework import generics
+from .models import New
+from .serializers import NewSerializer
+from .pagination import NewPagination
 
-# Create your views here.
+
+class NewListCreateView(generics.ListCreateAPIView):
+    queryset = New.objects.all()
+    serializer_class = NewSerializer
+    pagination_class = NewPagination
+
+class NewDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = New.objects.all()
+    serializer_class = NewSerializer
