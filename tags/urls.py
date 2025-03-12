@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('tags/', views.TagListCreateView.as_view(), name='tag-list'),
-    path('tags/<int:pk>/', views.TagDetailView.as_view(), name='tag-detail'),
+    path('tags/<str:slug>/', views.TagDetailView.as_view(), name='tag-detail'),
 ]

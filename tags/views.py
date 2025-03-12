@@ -12,3 +12,4 @@ class TagListCreateView(generics.ListCreateAPIView):
 class TagDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
+    lookup_field = 'slug'

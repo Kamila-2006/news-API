@@ -12,3 +12,4 @@ class NewListCreateView(generics.ListCreateAPIView):
 class NewDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = New.objects.all()
     serializer_class = NewSerializer
+    lookup_field = 'slug'

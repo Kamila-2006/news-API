@@ -12,3 +12,4 @@ class CategoryListCreateView(generics.ListCreateAPIView):
 class CategoryDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    lookup_field = 'slug'
