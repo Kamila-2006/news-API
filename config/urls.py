@@ -24,6 +24,7 @@ urlpatterns = [
     path('api/', include('categories.urls'), name='categories'),
     path('api/', include('tags.urls'), name='tags'),
     path('api/', include('news.urls'), name='news'),
+    path('api/', include('comments.urls'), name='comments'),
 ]
 
 if settings.DEBUG:
