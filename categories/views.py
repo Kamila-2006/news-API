@@ -1,15 +1,11 @@
-from rest_framework import generics
+from rest_framework import viewsets
 from .models import Category
 from .serializers import CategorySerializer
 from .pagination import CategoryPagination
 
 
-class CategoryListCreateView(generics.ListCreateAPIView):
+class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     pagination_class = CategoryPagination
-
-class CategoryDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
     lookup_field = 'slug'

@@ -1,8 +1,11 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from . import views
 
 
+router = DefaultRouter()
+router.register(r'news', views.NewViewSet, basename='new')
+
 urlpatterns = [
-    path('news/', views.NewListCreateView.as_view(), name='new-list'),
-    path('news/<str:slug>/', views.NewDetailView.as_view(), name='new-detail'),
+    path('', include(router.urls)),
 ]
